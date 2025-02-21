@@ -1,18 +1,17 @@
-# Wireshark Analysis (Snort)
+# Wireshark Analysis 
 
 ## Objective
-This project focuses on leveraging Wireshark for network packet analysis and developing a custom Snort rule to enhance threat detection. By capturing and analyzing network traffic, I identified anomalies and potential security threats using targeted Wireshark filters. Additionally, I created and implemented a custom Snort detection rule to improve network security monitoring and response.
+This project focuses on leveraging Wireshark for network packet analysis and developing a custom Snort rule to enhance threat detection. By capturing and analyzing network traffic, I identified anomalies and potential security threats using targeted Wireshark filters. 
 
 ### Skills Learned
 
 - Use Wireshark to capture and analyze network packets for anomalies
 - Use Wireshark filters to isolate malicious activities
-- Wrote a custom detection rule in Snort to improve threat detection
 - Apply MITRE ATT&CK tactics to map adversary techniques in network traffic
 
 ### Tools Used
 
-- Wireshark - Snort - CiscoTalos Intelligence - VirusTotal - Google
+- Wireshark - CiscoTalos Intelligence - VirusTotal - Google
 
 ## Investigate the Statistics of the PCAP
 
@@ -72,19 +71,6 @@ In the beginning, there was a lot of SMB sessions in the protocol hierarchy
 
 ![Screenshot 2025-02-20 161927](https://github.com/user-attachments/assets/244c2008-8345-4767-aaab-f427012a9838)
 
-SNORT RULE FOR THE MZ DOS FILE
-
-![Screenshot 2025-02-20 151850](https://github.com/user-attachments/assets/3175ae09-5a8b-4fd1-92e3-f06fb0a8b562)
-![Screenshot 2025-02-20 195751](https://github.com/user-attachments/assets/6ebe4468-07d5-421c-a684-0d4f64412814)
-
-- Source port 80 to match any response from the web server to the endpoint
-- "4D 5A" is the hex signature of MZ
-- "depth: 2" to see the first 2 bytes of the payload for signature check
-
-![Screenshot 2025-02-21 091319](https://github.com/user-attachments/assets/d9165220-c8b1-45ba-a984-df37e7962c11)
-![Screenshot 2025-02-21 091714](https://github.com/user-attachments/assets/95df3fa4-96b1-4842-870d-f2f21098c3b7)
-
-- Found 1 Alert and able to open the stream of packets on Wireshark
 
 
 
