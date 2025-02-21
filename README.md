@@ -27,7 +27,7 @@ Conversations
 
 ![Screenshot 2025-02-20 151337](https://github.com/user-attachments/assets/c78e6dba-be57-435d-8e74-c09c924911a3)
 
-- At this point, I would think that 10.0.0.149 is our infected endpoint and the adversary has also compromised our 10.0.0.6 endpoint
+- At this point, I would think that 10.0.0.149 is our infected endpoint and the adversary has also compromised our 10.0.0.6 endpoint which is our domain controller
 
 - I'll make a note of all the external IP addresses commonly used
 
@@ -54,14 +54,37 @@ Protocol Hierarchy
 ![Screenshot 2025-02-20 152801](https://github.com/user-attachments/assets/fd3fee4c-8aa0-432e-80a1-8bfdda1023c1)
 ![Screenshot 2025-02-20 152714](https://github.com/user-attachments/assets/4dffc207-79ad-4461-9e94-9cf5e4d2f3cb)
 
-- Infected with Qakbot Malware
+Infected with Qakbot Malware
+- Qakbot tend to perform ARP scan in order to discover other endpoints on the network
+- I want to check if 10.0.0.149 did an ARP scan on to the broadcast address
 
+![Screenshot 2025-02-20 153942](https://github.com/user-attachments/assets/de76c7f6-dc83-4069-8400-b71987edc808)
+![Screenshot 2025-02-20 163512](https://github.com/user-attachments/assets/dc7f6e21-0928-4fc2-a133-454dd8567883)
 
+Adversary indeed did an ARP scan and managed to find 10.0.0.6 and 10.0.0.1 (ICMP REPLY)
+- See a lot of imcomplete TCP handshake attempts and reset flags on 10.0.0.1 endpoint
 
+![Screenshot 2025-02-20 161013](https://github.com/user-attachments/assets/42af3c3c-8273-4254-b06b-2c78b37a1bf5)
+![Screenshot 2025-02-20 161153](https://github.com/user-attachments/assets/985bdb33-6849-4483-8392-5f6de1b7d4f0)
 
+In the beginning, there was a lot of SMB sessions in the protocol hierarchy
+- As we see the objects transferred in SMB --> see a lot of DLL files transfered into our DC endpoint
 
+![Screenshot 2025-02-20 161927](https://github.com/user-attachments/assets/244c2008-8345-4767-aaab-f427012a9838)
 
+SNORT RULE FOR THE MZ DOS FILE
 
+![Screenshot 2025-02-20 151850](https://github.com/user-attachments/assets/3175ae09-5a8b-4fd1-92e3-f06fb0a8b562)
+![Screenshot 2025-02-20 195751](https://github.com/user-attachments/assets/6ebe4468-07d5-421c-a684-0d4f64412814)
+
+- Source port 80 to match any response from the web server to the endpoint
+- "4D 5A" is the hex signature of MZ
+- "depth: 2" to see the first 2 bytes of the payload for signature check
+
+![Screenshot 2025-02-21 091319](https://github.com/user-attachments/assets/d9165220-c8b1-45ba-a984-df37e7962c11)
+![Screenshot 2025-02-21 091714](https://github.com/user-attachments/assets/95df3fa4-96b1-4842-870d-f2f21098c3b7)
+
+- Found 1 Alert and able to open the stream of packets on Wireshark
 
 
 
