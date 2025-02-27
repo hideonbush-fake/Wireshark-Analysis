@@ -26,7 +26,7 @@ Conversations
 
 ![Screenshot 2025-02-20 151337](https://github.com/user-attachments/assets/c78e6dba-be57-435d-8e74-c09c924911a3)
 
-- At this point, I would think that 10.0.0.149 is our infected endpoint and the adversary has also compromised our 10.0.0.6 endpoint which is our domain controller
+- At this point, I would think that 10.0.0.149 is our infected endpoint and 10.0.0.6 endpoint is our domain controller
 
 - I'll make a note of all the external IP addresses commonly used
 
