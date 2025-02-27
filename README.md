@@ -45,7 +45,7 @@ Protocol Hierarchy
 ![Screenshot 2025-02-20 151850](https://github.com/user-attachments/assets/3175ae09-5a8b-4fd1-92e3-f06fb0a8b562)
 
 1. User-Agent string being "curl" is suspicious as it means they've executed some sort of script
-2. "MZ" is the file signature for MZ DOS FILE (I'll be making a custom Snort detection rule on this at the end)
+2. "MZ" is the file signature for MZ DOS FILE 
 3. Since the infected endpoint now have the 86607 DAT FILE, I will export it and get the file hash to do a reputation check
 
 ![Screenshot 2025-02-20 163253](https://github.com/user-attachments/assets/b43f608e-ef7f-4669-858d-2dc7312150b0)
