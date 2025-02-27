@@ -1,7 +1,7 @@
 # Wireshark Analysis 
 
 ## Objective
-This project focuses on leveraging Wireshark for network packet analysis and developing a custom Snort rule to enhance threat detection. By capturing and analyzing network traffic, I identified anomalies and potential security threats using targeted Wireshark filters. 
+This project focuses on leveraging Wireshark for network packet analysis. By capturing and analyzing network traffic, I identified anomalies and potential security threats using targeted Wireshark filters. 
 
 ### Skills Learned
 
